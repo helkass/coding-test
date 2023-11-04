@@ -7,7 +7,7 @@ import { links } from "../constant/app";
 const Profile = () => {
    return (
       <>
-         <FadeInView>
+         <FadeInView id="bride">
             <SubtitleSection>
                Together with joyful hearts and the grace of God, we cordially
                request the honor of your presence at the wedding celebration of:

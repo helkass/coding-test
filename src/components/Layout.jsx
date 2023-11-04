@@ -3,7 +3,7 @@ import { image } from "../constant/app";
 import { globalStyles as styles } from "../styles/app";
 import { FadeInView } from "./atoms";
 
-const Layout = ({ children, music }) => {
+const Layout = ({ children }) => {
    return (
       <Chakra.HStack
          pos="relative"
@@ -61,8 +61,6 @@ const Layout = ({ children, music }) => {
                   </Chakra.Text>
                </Chakra.VStack>
             </FadeInView>
-            {/* button group bars and music */}
-            {music()}
          </Chakra.Box>
          {/* right content */}
          <Chakra.VStack

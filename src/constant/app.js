@@ -31,3 +31,26 @@ export const links = {
    wa: "https://wa.me/+6281329274582?text=Hi%20Kak,%20aku%20mau%20pesan%20undangan%20online%20nih!",
    insta: "https://www.instagram.com/invitato.id/",
 };
+
+export const sidebarLinks = [
+   {
+      title: "groom & bride",
+      href: "#bride",
+   },
+   {
+      title: "wedding details",
+      href: "#details",
+   },
+   {
+      title: "repv",
+      href: "#rspv",
+   },
+   {
+      title: "live streaming",
+      href: "#stream",
+   },
+   {
+      title: "wedding gift",
+      href: "#gift",
+   },
+];

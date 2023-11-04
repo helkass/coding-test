@@ -11,7 +11,7 @@ import { FadeInView } from "./atoms/Fade";
 
 const Stream = () => {
    return (
-      <Chakra.VStack w="100%" mt="2" color="white">
+      <Chakra.VStack w="100%" mt="2" color="white" id="stream">
          <Chakra.VStack p="32px" zIndex={1}>
             <Chakra.Heading
                fontWeight="extrabold"
@@ -65,6 +65,7 @@ const Stream = () => {
                </Chakra.Link>
             </Chakra.VStack>
             <WaveContent
+               id="gift"
                w="100%"
                zIndex="10"
                textAlign="center"

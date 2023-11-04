@@ -1,5 +1,6 @@
 import Layout from "./Layout";
 import Front from "./Front";
+import Sidebar from "./Sidebar";
 
 import Hero from "./Hero";
 import Surah from "./Surah";
@@ -14,6 +15,7 @@ import Wishes from "./Wishes";
 
 export {
    Layout,
+   Sidebar,
    Hero,
    Front,
    Surah,

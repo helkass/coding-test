@@ -11,6 +11,7 @@ const Celebration = () => {
    return (
       <Watermark p="32px 16px">
          <Chakra.VStack
+            id="details"
             p="32px"
             bg="var(--color-main-blue)"
             w="100%"

@@ -5,61 +5,53 @@ import { FaBars } from "react-icons/fa";
 import { MdMusicNote, MdMusicOff } from "react-icons/md";
 import music from "../static/music.mp3";
 import ReactHowler from "react-howler";
-import { Button, HStack, Icon } from "@chakra-ui/react";
+import { Button, HStack, Icon, useDisclosure } from "@chakra-ui/react";
 
 function App() {
-   const [isOpen, setOpen] = useState(false);
+   const [frontIsOpen, setFrontOpen] = useState(false);
    const [conMusic, setConMusic] = useState(false);
+   const { isOpen, onOpen, onClose } = useDisclosure();
 
    const handleOpen = () => {
-      setOpen(!isOpen);
+      setFrontOpen(!frontIsOpen);
       setConMusic(true);
    };
    return (
       <div className="App">
          <Component.Layout
             setPlayMusic={() => handleOpen()}
-            isPlayMusic={isOpen}
-            music={() => {
-               return (
-                  <>
-                     <ReactHowler src={music} playing={isOpen && conMusic} />
-                     {isOpen && (
-                        <HStack
-                           pos="fixed"
-                           zIndex="10"
-                           bottom="1.5"
-                           left="1.5"
-                           gap="1">
-                           <Button
-                              fontSize="xs"
-                              p={0}
-                              variant="icon"
-                              rounded="full">
-                              <Icon as={FaBars} />
-                           </Button>
-                           <Button
-                              onClick={() => setConMusic(!conMusic)}
-                              fontSize="xs"
-                              variant="icon"
-                              p={0}
-                              rounded="full">
-                              {conMusic ? (
-                                 <Icon as={MdMusicNote} />
-                              ) : (
-                                 <Icon as={MdMusicOff} />
-                              )}
-                           </Button>
-                        </HStack>
-                     )}
-                  </>
-               );
-            }}>
+            isPlayMusic={frontIsOpen}>
             <Component.Front
-               setOpen={() => handleOpen(!isOpen)}
-               isOpen={isOpen}
+               setOpen={() => handleOpen(!frontIsOpen)}
+               isOpen={frontIsOpen}
             />
-            {isOpen && (
+            <ReactHowler src={music} playing={frontIsOpen && conMusic} />
+            {frontIsOpen && (
+               <HStack pos="fixed" zIndex="10" bottom="1.5" left="1.5" gap="1">
+                  <Button
+                     onClick={onOpen}
+                     fontSize="xs"
+                     p={0}
+                     variant="icon"
+                     rounded="full">
+                     <Icon as={FaBars} />
+                  </Button>
+                  <Button
+                     onClick={() => setConMusic(!conMusic)}
+                     fontSize="xs"
+                     variant="icon"
+                     p={0}
+                     rounded="full">
+                     {conMusic ? (
+                        <Icon as={MdMusicNote} />
+                     ) : (
+                        <Icon as={MdMusicOff} />
+                     )}
+                  </Button>
+               </HStack>
+            )}
+            <Component.Sidebar isOpen={isOpen} onClose={onClose} />
+            {frontIsOpen && (
                <motion.div
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
