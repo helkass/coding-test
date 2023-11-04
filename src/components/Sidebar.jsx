@@ -24,8 +24,8 @@ function Sidebar({ isOpen, onClose }) {
          <DrawerContent
             w={{ base: "80%", lg: "100%" }}
             p={{ base: 0, lg: "2" }}
-            maxW="500px">
-            <DrawerBody pt="6" w="100%">
+            maxW={{ base: "80%", lg: "500px" }}>
+            <DrawerBody pt="6" w="80%" alignSelf={"end"}>
                <Box alignSelf="end" justifyContent="flex-end" display="flex">
                   <Bird color="var(--color-main-text)" />
                </Box>
