@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Dancing+Script:wght@400;500;600;700&family=Jost:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+:root {
+   font-size: 16px;
+
+   --color-main-blue: #b4c5d5;
+   --color-main-blue-medium: rgb(155, 174, 191);
+   --color-main-text: #67544e;
+   --color-main-text-medium: rgb(155, 112, 101);
+
+   --btn-transparent: rgb(180 197 212 / 68%);
+
+   --font-heading: "Clicker Script", sans-serif;
+   --font-fantasy: "Dancing Script", sans-serif;
+   --bg-overlay: rgba(180, 197, 212, 0.35);
+}
+
+body {
+   font-family: "Jost", sans-serif;
+   box-sizing: border-box;
+   color: var(--color-main-text) !important;
+}
+
+label {
+   color: var(--color-main-text);
+   font-size: var(--chakra-fontSizes-sm) !important;
+}
+input::placeholder {
+   color: var(--color-main-text);
+}
+
+.animate-pulse {
+   animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+   0% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(2.05);
+   }
+   50% {
+      transform: scale(1);
+   }
+}
+
+.animate-fade-custom {
+   animation-name: fade-custom;
+   animation-duration: 1000ms;
+   animation-delay: 0.6s;
+   animation-fill-mode: both;
+}
+
+@keyframes fade-custom {
+   0% {
+      transform: translateY(100px);
+      opacity: 0;
+   }
+   50% {
+      transform: translateY(50px);
+      opacity: 0.5;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+
+/* overide css carousel */
+.carousel {
+   position: relative;
+   margin-bottom: 0;
+}
+.carousel .control-next.control-arrow,
+.carousel .control-prev.control-arrow {
+   max-height: 100px;
+   transform: translateY(250%);
+   margin: auto 0;
+}
+
+.carousel .control-next.control-arrow,
+.carousel .control-next.control-arrow:hover {
+   background-color: transparent;
+}
+
+.carousel .control-prev.control-arrow,
+.carousel .control-prev.control-arrow:hover {
+   background-color: transparent;
+}
